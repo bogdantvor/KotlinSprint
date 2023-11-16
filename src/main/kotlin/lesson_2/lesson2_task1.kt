@@ -2,6 +2,6 @@ package lesson_2
 
 fun main() {
     val grade = listOf(3, 4, 3, 5)
-    val averageScore = grade.average()
-    println("Средний балл - $averageScore")
+    val averageGrade = grade.average()
+    println("Средний балл - $averageGrade")
 }
