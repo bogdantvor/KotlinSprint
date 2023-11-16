@@ -4,13 +4,13 @@ fun main() {
 
     val totalSeconds = 6488
 
-    val hours = totalSeconds / 3600
-    val minutes = (totalSeconds % 3600) / 60
-    val seconds = totalSeconds % 60
+    val hours = totalSeconds / secInHour
+    val minutes = (totalSeconds % secInHour) / secInMinute
+    val seconds = totalSeconds % secInMinute
 
-    println("Гагарин пробыл в космосе - ${formatTime(hours)}:${formatTime(minutes)}:${formatTime(seconds)}")
+    val formattedTime = String.format("%02d:%02d:%02d", hours, minutes, seconds)
+    println("Время проведенное в космосе: $formattedTime")
 }
 
-fun formatTime(value: Int): String {
-    return if (value < 10) "0$value" else value.toString()
-}
+    const val secInHour = 3600
+    const val secInMinute = 60
