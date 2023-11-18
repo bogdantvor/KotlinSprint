@@ -9,5 +9,4 @@ fun main() {
     println("Откуда: $from")
     println("Куда: $to")
     println("Номер хода: $moveNumber")
-
 }
