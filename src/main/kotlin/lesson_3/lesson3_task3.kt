@@ -4,9 +4,11 @@ fun main() {
     val multiplicationNumber = 3 // Ваше число
 
     val table = StringBuilder()
-    repeat(9) { i ->
-        val result = multiplicationNumber * (i + 1)
-        table.append("$multiplicationNumber x ${i + 1} = $result\n")
+    var index = 0
+    repeat(9) {
+        index++
+        val result = multiplicationNumber * index
+        table.append("$multiplicationNumber x $index = $result\n")
     }
 
     println(table)
