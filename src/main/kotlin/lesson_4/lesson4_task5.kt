@@ -2,19 +2,19 @@ package lesson_4
 
 fun main() {
     print("Наличие повреждений корпуса (true/false): ")
-    val damagedHull = readLine()?.toBoolean() ?: false
+    val isDamaged = readln().toBoolean()
 
     print("Текущий состав экипажа: ")
-    val crewSize = readLine()?.toInt() ?: 0
+    val crewSize = readln().toInt()
 
     print("Количество ящиков с провизией на борту: ")
-    val provisionsBoxes = readLine()?.toInt() ?: 0
+    val provisionsBoxes = readln().toInt()
 
     print("Благоприятность метеоусловий (true/false): ")
-    val favorableWeather = readLine()?.toBoolean() ?: false
+    val isWeatherFavorable = readln().toBoolean()
 
-    val canSail = (!damagedHull && crewSize in MIN_CREW..MAX_CREW && provisionsBoxes > MIN_PROVISIONS_BOXES)
-            || (favorableWeather && crewSize == MAX_CREW && provisionsBoxes >= MIN_PROVISIONS_BOXES)
+    val canSail = (!isDamaged && crewSize in MIN_CREW..MAX_CREW && provisionsBoxes > MIN_PROVISIONS_BOXES)
+            || (isWeatherFavorable && crewSize == MAX_CREW && provisionsBoxes >= MIN_PROVISIONS_BOXES)
 
     println("Корабль может отправиться в плавание: $canSail")
 }
