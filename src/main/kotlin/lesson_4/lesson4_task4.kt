@@ -2,9 +2,9 @@ package lesson_4
 
 fun main() {
     val trainingDay = 5
-
-    val armAndAbsDay = trainingDay % 2 == 1
-    val legAndBackDay = trainingDay % 2 == 0
+    val isEven = trainingDay % 2 == 0
+    val armAndAbsDay = !isEven
+    val legAndBackDay = isEven
 
     println(
         """
