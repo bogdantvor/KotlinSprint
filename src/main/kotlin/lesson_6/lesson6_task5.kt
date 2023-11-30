@@ -21,15 +21,18 @@ fun main() {
             println("Логин и пароль введены верно. Докажите, что Вы не бот")
 
             var attempts = 3
+            val number1 = 1..9
+            val number2 = 1..9
+
             while (attempts > 0) {
-                val number1 = (1..9).random()
-                val number2 = (1..9).random()
-                println("Сложите два числа: $number1 + $number2")
+                val num1 = number1.random()
+                val num2 = number2.random()
+                println("Сложите два числа: $num1 + $num2")
 
                 print("Введите ваш ответ: ")
                 val answer = readln().toInt()
 
-                if (answer == number1 + number2) {
+                if (answer == num1 + num2) {
                     println("Добро пожаловать!")
                     return
                 } else {
