@@ -2,8 +2,8 @@ package lesson_7
 
 fun main() {
     val passwordLength = 6
-    val numberChar = ('0'..'9')
-    val letterChar = ('a'..'z')
+    val numberChar = '0'..'9'
+    val letterChar = 'a'..'z'
 
     val password = buildString {
         for (i in 1..passwordLength) {
