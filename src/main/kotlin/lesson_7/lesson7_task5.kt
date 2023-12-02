@@ -6,18 +6,18 @@ fun main() {
     val numbersRange = 0..9
     val lettersRange = 'a'..'z'
     val capitalLettersRange = 'A'..'Z'
-    val characters = (numbersRange + lettersRange + capitalLettersRange).toList()
+    val characters = (numbersRange + lettersRange + capitalLettersRange)
 
-    if (maxLength >= 6) {
-        val password = buildString {
-            for (i in 1..maxLength) {
-                val char = characters.random()
-                append(char)
-            }
+    if (maxLength >= PASSWORD_MIN_LENGTH) {
+        var password = ""
+        for (i in 1..maxLength) {
+            val char = characters.random()
+            password += char
         }
-
         println("Сгенерированный пароль: $password")
     } else {
         println("Минимальная длина пароля - 6 символов. Введите корректное значение")
     }
 }
+
+const val PASSWORD_MIN_LENGTH = 6
