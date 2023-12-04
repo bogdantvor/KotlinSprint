@@ -6,19 +6,12 @@ fun main() {
     print("Введите ингредиент, который Вы хотите найти: ")
     val userInput = readln()
 
-    var elementFound = false
-
     for (element in recipeIngredients) {
         if (element == userInput) {
-            elementFound = true
-            break
+            println("Ингредиент $userInput в рецепте есть")
+            return
         }
     }
 
-    if (elementFound) {
-        println("Ингредиент $userInput в рецепте есть")
-    } else {
-        println("Такого ингредиента в рецепте нет")
-    }
-
+    println("Такого ингредиента в рецепте нет")
 }
