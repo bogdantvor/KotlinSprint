@@ -9,11 +9,11 @@ fun main() {
     }
 
     print("Введите ингредиент, который вы хотите заменить: ")
-    val ingredientToReplace = readln().toString()
+    val ingredientToReplace = readln()
 
-    if (ingredientToReplace != null && ingredients.contains(ingredientToReplace)) {
+    if (ingredientToReplace.isNotEmpty() && ingredients.contains(ingredientToReplace)) {
         print("Введите новый ингредиент: ")
-        val newIngredient = readln().toString()
+        val newIngredient = readln()
 
         ingredients[ingredients.indexOf(ingredientToReplace)] = newIngredient
 
