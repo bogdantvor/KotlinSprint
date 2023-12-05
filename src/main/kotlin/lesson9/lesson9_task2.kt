@@ -1,20 +1,19 @@
 package lesson9
 
 fun main() {
-    val baseIngredientsList = listOf("мясо", "картошка", "лук")
-    println("В рецепте есть базовые ингредиенты: $baseIngredientsList")
+    val ingredientsList = mutableListOf("мясо", "картошка", "лук")
+    println("В рецепте есть базовые ингредиенты: $ingredientsList")
 
     print("Желаете добавить еще ингредиенты? (да/нет): ")
     val answer = readln()
 
-    if (answer == "да") {
+    if (answer.equals("да", ignoreCase = true)) {
         print("Какой ингредиент вы хотите добавить? ")
         val newIngredient = readln()
 
-        val newIngredientsList = baseIngredientsList.toMutableList()
-        newIngredientsList.add(newIngredient)
+        ingredientsList.add(newIngredient)
 
-        println("Теперь в рецепте есть следующие ингредиенты: $newIngredientsList")
+        println("Теперь в рецепте есть следующие ингредиенты: $ingredientsList")
     } else {
         println("Программа завершена")
     }
