@@ -11,11 +11,13 @@ fun main() {
     print("Введите ингредиент, который вы хотите заменить: ")
     val ingredientToReplace = readln()
 
-    if (ingredientToReplace.isNotEmpty() && ingredients.contains(ingredientToReplace)) {
+    val indexOfIngredient = ingredients.indexOf(ingredientToReplace)
+
+    if (ingredientToReplace.isNotEmpty() && indexOfIngredient != -1) {
         print("Введите новый ингредиент: ")
         val newIngredient = readln()
 
-        ingredients[ingredients.indexOf(ingredientToReplace)] = newIngredient
+        ingredients[indexOfIngredient] = newIngredient
 
         println("Готово! Вы сохранили следующий список:")
         for (i in ingredients){
