@@ -3,27 +3,25 @@ package lesson9
 import java.util.*
 
 fun main() {
-    val ingredientsList = mutableListOf<String>()
+    val mutableSet = mutableSetOf<String>()
 
     var ingredientNumber = 1
     while (ingredientNumber <= 5) {
         print("Введите название ингредиента $ingredientNumber: ")
         val ingredient = readln()
 
-        if (ingredient.isNotEmpty() && !ingredientsList.contains(ingredient)) {
-            ingredientsList.add(ingredient)
+        if (ingredient.isNotEmpty()) {
+            mutableSet.add(ingredient)
             ingredientNumber++
         } else {
             println("Некорректный ввод. Пожалуйста, введите уникальный ингредиент")
         }
     }
 
-    ingredientsList.sort()
+    val ingredientList = mutableSet.toList().sorted()
 
-    print(ingredientsList.first()
-        .replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() })
+    val ingredientsString = ingredientList.joinToString(separator = ", ")
 
-    for (i in 1 until ingredientsList.size) {
-        print(", ${ingredientsList[i]}")
-    }
+    print(ingredientsString.replaceFirstChar { if (it.isLowerCase())
+        it.titlecase(Locale.getDefault()) else it.toString() })
 }
