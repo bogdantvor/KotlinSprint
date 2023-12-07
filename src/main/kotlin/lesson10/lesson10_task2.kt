@@ -16,6 +16,6 @@ fun main() {
     }
 }
 
-fun validateInput(input: String): Boolean {
-    return input.length >= 4
-}
+fun validateInput(input: String): Boolean = input.length >= MIN_LENGTH
+
+    const val MIN_LENGTH = 4
