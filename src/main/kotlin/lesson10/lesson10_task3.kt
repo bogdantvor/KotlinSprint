@@ -11,8 +11,8 @@ fun main() {
 }
 
 fun generatePassword(length: Int): String {
-    val digits = "0123456789"
-    val specialChars = "!\"#$%&'()*+,-./"
+    val digits = (0..9).toString()
+    val specialChars = (' '..'/').toString()
 
     var password = ""
     for (i in 1..length) {
