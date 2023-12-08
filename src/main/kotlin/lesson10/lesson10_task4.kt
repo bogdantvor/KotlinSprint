@@ -6,8 +6,8 @@ fun main() {
     var playerWins = 0
 
     do {
-        val playerResult = rollDice("Игрок")
-        val computerResult = rollDice("Компьютер")
+        val playerResult = rollDice10_4("Игрок")
+        val computerResult = rollDice10_4("Компьютер")
 
         when {
             playerResult > computerResult -> {
@@ -23,7 +23,7 @@ fun main() {
     println("Игра завершена. Вы выиграли $playerWins партий")
 }
 
-fun rollDice(player: String): Int {
+fun rollDice10_4(player: String): Int {
     val diceResult = (1..6).random()
     println("$player бросает кость и выбрасывает: $diceResult")
     return diceResult
