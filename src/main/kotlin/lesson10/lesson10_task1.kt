@@ -3,8 +3,8 @@ package lesson10
 fun main() {
     println("Добро пожаловать в игру в кости!")
 
-    val playerResult = rollDice("Игрок")
-    val computerResult = rollDice("Компьютер")
+    val playerResult = rollDice10_1("Игрок")
+    val computerResult = rollDice10_1("Компьютер")
 
     when {
         playerResult > computerResult -> println("Победило человечество!")
@@ -13,7 +13,7 @@ fun main() {
     }
 }
 
-fun rollDice(player: String): Int {
+fun rollDice10_1(player: String): Int {
     val diceResult = (1..6).random()
     println("$player бросает кость и выбрасывает: $diceResult")
     return diceResult
