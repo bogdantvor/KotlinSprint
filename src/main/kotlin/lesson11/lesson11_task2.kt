@@ -23,8 +23,7 @@ class User2(
 
         if (currentPassword == password) {
             print("Введите новый пароль: ")
-            val newPassword = readln()
-            password = newPassword
+            password = readln()
             println("Пароль успешно изменен")
         } else {
             println("Неверный текущий пароль. Изменение пароля отменено")
