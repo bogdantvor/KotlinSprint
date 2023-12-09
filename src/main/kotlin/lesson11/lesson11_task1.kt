@@ -16,7 +16,8 @@ fun main() {
 }
 
 fun printUserInfo(user: User): String {
-    val userInfo = "Данные юзера: userId=${user.userId}, login=${user.login}, password=${user.password}, email=${user.email}"
+    val userInfo =
+        "Данные юзера: userId=${user.userId}, login=${user.login}, password=${user.password}, email=${user.email}"
     println(userInfo)
     return userInfo
 }
