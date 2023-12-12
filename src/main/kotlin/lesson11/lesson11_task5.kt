@@ -29,10 +29,8 @@ class Forum {
 
     fun printThread() {
         messages.forEach { message ->
-            val author = users.find { it.userId == message.authorId }
-            if (author != null) {
-                println("${author.userName}: ${message.message}")
-            }
+            users.find { it.userId == message.authorId }
+                ?.let { author -> println("${author.userName}: ${message.message}") }
         }
     }
 }
