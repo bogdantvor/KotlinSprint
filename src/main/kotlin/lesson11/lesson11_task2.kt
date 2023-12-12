@@ -32,7 +32,7 @@ class User2(
 }
 
 fun main() {
-    val user = User2("1", "Alex", "Smirn123", "alexsmirn@example.com")
+    val user = User2(userId = "2", login = "Ivan", password = "ivanqwerty", email = "ivanovivan@example.com")
 
     user.displayUserInfo()
     user.updateBio()
