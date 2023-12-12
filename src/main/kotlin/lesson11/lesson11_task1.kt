@@ -8,8 +8,8 @@ class User(
 )
 
 fun main() {
-    val user1 = User("1", "Alex", "Smirn123", "alexsmirn@example.com")
-    val user2 = User("2", "Ivan", "ivanqwerty", "ivanovivan@example.com")
+    val user1 = User(userId = "1", login = "Alex", password = "Smirn123", email = "alexsmirn@example.com")
+    val user2 = User(userId = "2", login = "Ivan", password = "ivanqwerty", email = "ivanovivan@example.com")
 
     printUserInfo(user1)
     printUserInfo(user2)
