@@ -6,7 +6,7 @@ data class Room(
     val participants: List<RoomParticipant>
 )
 
-data class User(
+data class User11_3(
     val userId: Int,
     val username: String,
     val avatarUrl: String
@@ -19,14 +19,14 @@ enum class RoomStatus {
 }
 
 data class RoomParticipant(
-    val user: User,
+    val user: User11_3,
     val status: RoomStatus
 )
 
 fun main() {
-    val user1 = User(1, "Алексей", "https://example.com/avatar1.jpg")
-    val user2 = User(2, "Богдан", "https://example.com/avatar2.jpg")
-    val user3 = User(3, "Михаил", "https://example.com/avatar3.jpg")
+    val user1 = User11_3(1, "Алексей", "https://example.com/avatar1.jpg")
+    val user2 = User11_3(2, "Богдан", "https://example.com/avatar2.jpg")
+    val user3 = User11_3(3, "Михаил", "https://example.com/avatar3.jpg")
 
     val participants = listOf(
         RoomParticipant(user1, RoomStatus.TALKING),

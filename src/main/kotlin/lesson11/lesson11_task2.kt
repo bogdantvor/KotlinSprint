@@ -1,23 +1,23 @@
 package lesson11
 
-class User2(
+class User11_2(
     private val userId: String,
     private val login: String,
     private var password: String,
     private val email: String,
     private var bio: String = ""
 ) {
-    fun displayUserInfo() {
+    fun displayUserInfo11_2() {
         println("userId = $userId, login = $login, password = $password, email = $email, bio = $bio")
     }
 
-    fun updateBio() {
+    fun updateBio11_2() {
         print("Введите информацию о себе: ")
         bio = readln()
         println("Информация о себе успешно обновлена")
     }
 
-    fun changePassword() {
+    fun changePassword11_2() {
         print("Введите текущий пароль: ")
         val currentPassword = readln()
 
@@ -32,12 +32,12 @@ class User2(
 }
 
 fun main() {
-    val user = User2(userId = "2", login = "Ivan", password = "ivanqwerty", email = "ivanovivan@example.com")
+    val user = User11_2(userId = "2", login = "Ivan", password = "ivanqwerty", email = "ivanovivan@example.com")
 
-    user.displayUserInfo()
-    user.updateBio()
-    user.changePassword()
+    user.displayUserInfo11_2()
+    user.updateBio11_2()
+    user.changePassword11_2()
 
     println("Обновленная информация о пользователе:")
-    user.displayUserInfo()
+    user.displayUserInfo11_2()
 }
