@@ -18,9 +18,8 @@ class Icebreaker(
     name: String = "Icebreaker",
     speed: Int = 10,
     capacity: Int = 50,
-    cargoCapacity: Int,
     val iceBreakingAbility: Boolean = true
-) : Ship(name, speed, capacity, cargoCapacity)
+) : Ship(name, speed, capacity)
 
 fun main() {
     val liner = Ship()
