@@ -25,14 +25,10 @@ fun main() {
         print("Пол (${Gender.entries.joinToString { it.name.lowercase(Locale.getDefault()) }}): ")
         val genderInput = readln().uppercase(Locale.getDefault())
 
-        val gender = when (genderInput.uppercase(Locale.getDefault())) {
-            "MALE" -> Gender.MALE
-            "FEMALE" -> Gender.FEMALE
-            "OTHER" -> Gender.OTHER
-            else -> {
-                println("Некорректное значение пола. Установлено значение OTHER")
-                Gender.OTHER
-            }
+        val gender: Gender =
+            Gender.entries.find { it.name == genderInput }
+                ?: Gender.OTHER
+                    .also { println("Некорректное значение пола. Установлено значение OTHER")
         }
 
         val person = Person(name, gender)
