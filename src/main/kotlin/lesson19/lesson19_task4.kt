@@ -15,12 +15,12 @@ class Tank {
     }
 
     fun fire() {
-        if (currentAmmo == null) {
-            println("Танк не заряжен патронами")
-        } else {
-            val damage = currentAmmo!!.damage
-            println("Выстрел! Нанесен урон: $damage единиц")
-        }
+        currentAmmo?.damage
+            ?.also {
+                println("Выстрел! Нанесен урон: $it единиц")
+                currentAmmo = null // обнуляем после выстрела
+            }
+            ?: println("Танк не заряжен патронами")
     }
 }
 
@@ -31,10 +31,13 @@ fun main() {
 
     tank.armWithAmmo(AmmoType.BLUE)
     tank.fire()
+    tank.fire()
 
     tank.armWithAmmo(AmmoType.GREEN)
     tank.fire()
+    tank.fire()
 
     tank.armWithAmmo(AmmoType.RED)
+    tank.fire()
     tank.fire()
 }
