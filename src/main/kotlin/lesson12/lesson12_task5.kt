@@ -19,7 +19,7 @@ fun List<WeatherDataKelvin12_5>.calculateAverages(): Pair<Double, Double> {
     val averageDayTemperature = dayTemperatures.average()
     val averageNightTemperature = nightTemperatures.average()
 
-    return Pair(averageDayTemperature, averageNightTemperature)
+    return averageDayTemperature to averageNightTemperature
 }
 
 fun List<WeatherDataKelvin12_5>.countPrecipitationDays(): Int {
@@ -42,9 +42,7 @@ fun main() {
     val nightTemperatures = weatherDataList.map { it.nightTemperature }
     val precipitationDaysCount = weatherDataList.countPrecipitationDays()
 
-    val averages = weatherDataList.calculateAverages()
-    val averageDayTemperature = averages.first
-    val averageNightTemperature = averages.second
+    val (averageDayTemperature, averageNightTemperature) = weatherDataList.calculateAverages()
 
     println("Average Day Temperature: $averageDayTemperature°C")
     println("Average Night Temperature: $averageNightTemperature°C")
