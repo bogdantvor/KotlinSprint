@@ -7,11 +7,11 @@ fun main() {
         if (index % 2 == 0) {
             { println("Нажат элемент $element") }
         } else {
-            {}
+            null
         }
     }
 
     for (lambda in lambdas) {
-        lambda.invoke()
+        lambda?.invoke()
     }
 }
