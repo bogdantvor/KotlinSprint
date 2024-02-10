@@ -3,7 +3,15 @@ package lesson20
 import kotlin.random.Random
 
 class Robot {
-    private lateinit var speechModifier: (String) -> String
+    private var speechModifier: (String) -> String = { it }
+
+    private val phrases = listOf(
+        "Привет, я робот!",
+        "Я умею программировать!",
+        "Скоро я завершу свою миссию",
+        "Работаю над улучшением своих навыков",
+        "В будущем я стану ещё лучше!"
+    )
 
     fun setModifier(modifier: (String) -> String) {
         speechModifier = modifier
@@ -14,20 +22,10 @@ class Robot {
     }
 
     fun speakRandomPhrase() {
-        val phrases = listOf(
-            "Привет, я робот!",
-            "Я умею программировать!",
-            "Скоро я завершу свою миссию",
-            "Работаю над улучшением своих навыков",
-            "В будущем я стану ещё лучше!"
-        )
         val randomIndex = Random.nextInt(phrases.size)
         val randomPhrase = phrases[randomIndex]
 
-        say(randomPhrase)
-
-        val modifiedPhrase = speechModifier(randomPhrase)
-        say(modifiedPhrase)
+        say(speechModifier(randomPhrase))
     }
 }
 
