@@ -1,15 +1,16 @@
 package lesson14
 
 class Chat {
+    private var lastMessageId = 0
     val messages = mutableListOf<Message>()
 
     fun addMessage(text: String, author: String) {
-        val message = Message(text, author)
+        val message = Message(++lastMessageId, text, author)
         messages.add(message)
     }
 
     fun addThreadMessage(text: String, author: String, parentMessageId: Int) {
-        val message = ChildMessage(text, author, parentMessageId)
+        val message = ChildMessage(++lastMessageId, text, author, parentMessageId)
         messages.add(message)
     }
 
@@ -18,7 +19,7 @@ class Chat {
         printMessages(groupedMessages, null, 0)
     }
 
-    fun printMessages(groupedMessages: Map<Int, List<Message>>, parentId: Int?, depth: Int) {
+    private fun printMessages(groupedMessages: Map<Int, List<Message>>, parentId: Int?, depth: Int) {
         groupedMessages[parentId]?.forEach { message ->
             println("\t".repeat(depth) + message.toString())
             if (message is ChildMessage) {
@@ -28,19 +29,13 @@ class Chat {
     }
 }
 
-open class Message(val text: String, val author: String) {
-    companion object {
-        private var nextId = 1
-    }
-
-    val id: Int = nextId++
-
+open class Message(val id: Int, val text: String, val author: String) {
     override fun toString(): String {
         return "[$author]: $text"
     }
 }
 
-class ChildMessage(text: String, author: String, val parentMessageId: Int) : Message(text, author) {
+class ChildMessage(id: Int, text: String, author: String, val parentMessageId: Int) : Message(id, text, author) {
     override fun toString(): String {
         return "[Reply to message $parentMessageId from $author]: $text"
     }
@@ -55,3 +50,4 @@ fun main() {
     chat.addMessage("Nice weather today!", "Eve")
     chat.printChat()
 }
+
